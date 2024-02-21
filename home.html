@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home
+    </title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+</head>
+
+<body>
+    <div class="page">
+        <div class="logo">
+            <img src="./assets/logo.png" alt="logo" id="logo-icon">
+        </div>
+        <div class="navbar">
+            <div class="button">Home</div>
+            <div class="button">Gallery</div>
+            <div class="button">About us</div>
+            <div class="button">Aminities</div>
+            <div class="button">Property Type</div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Enter location here">
+        </div>
+        <div class="search-icon">
+            <span class="material-symbols-outlined">
+                search
+                </span>
+        </div>
+        <div class="buy">
+            Buy now
+        </div>
+        <div class="back-arrow-icon">
+            ➡
+        </div>
+        <!-- ---------------------------Scrolling img------------------------------------------------------------------ -->
+        <div class="card-stack">
+            <div class="card-container" id="cardContainer">
+                <div class="card"><img src="./assets/image1.jpeg" alt="Card 1"></div>
+                <div class="card" id="center"><img src="./assets/image2.jpeg" alt="Card 2"></div>
+                <div class="card"><img src="./assets/image3.jpg" alt="Card 2"></div>
+                
+              
+            </div>
+        </div>
+        <!-- -------------------------------------home img --------------------------------------------- -->
+        <div class="banner">
+             
+
+            <div class="content">
+                <div class="bold-quote">
+                    Discover your Dream Home With us
+                </div>
+                <div class="home-img">
+                    <img src="./assets/house.jpeg" alt="house" class="house">
+                </div>
+                <div class="slogan">
+                    Unlock the Door to Your dream home with us- where every key opens a new chapter of possibility.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const cardContainer = document.getElementById('cardContainer');
+    
+        function autoScroll() {
+            const firstCard = cardContainer.firstElementChild;
+            cardContainer.style.transition = 'none'; // Disable transition during the change
+            // cardContainer.style.transform = 'translateX(-100%)'; // Move the container to the left
+            cardContainer.appendChild(firstCard);
+            // cardContainer.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                cardContainer.style.transition = 'transform 5s ease-in-out'; // Re-enable transition
+                cardContainer.style.transform = 'translateX(0)'; // Reset the container position
+            }, 0);
+            setTimeout(() => {
+                cardContainer.style.transition = 'transform 5s ease-in-out'; // Re-enable transition
+                cardContainer.style.transform = 'translateY(0)'; // Reset the container position
+            }, 1);
+        }
+    
+        setInterval(autoScroll, 2000); // Adjust the interval as needed (milliseconds)
+    </script>
+</body>
+
+</html>
