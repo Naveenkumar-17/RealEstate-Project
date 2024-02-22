@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aminities</title>
+    <style>
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, blue 10%, violet 70%, white);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .list-type {
+            width: fit-content;
+            height: fit-content;
+            padding: 20px 30px;
+            border-radius: 20px;
+            background-color: rgba(3, 3, 78, 0.7);
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            z-index: 1;
+
+        }
+
+        .navbar {
+            background: green;
+            display: flex;
+            width: 40%;
+            position: absolute;
+            top: 20px;
+            left: 20%;
+            background: transparent;
+            justify-content: space-between;
+
+        }
+
+        .list-type:hover {
+            box-shadow: white 5px 5px 3px 6px;
+        }
+
+        ul li {
+            font-size: 20px;
+            background-color: blue;
+            border-radius: 20px;
+            padding: 5px 20px;
+            margin-top: 25px;
+            color: white;
+            transition: transform 1s ease-out;
+        }
+
+        ul li:hover {
+            transform: scaleX(1.2);
+            color: blue;
+            background-color: aliceblue;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .building {
+            width: 100%;
+            height: 100%;
+
+            background: transparent;
+        }
+
+        .building::after {
+
+            content: "";
+            /* Required for pseudo-elements */
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(109, 109, 209, 0.233);
+        }
+
+        .btn {
+            margin-left: 40%;
+            height: fit-content;
+            width: fit-content;
+            background-color: rgb(66, 8, 201);
+            color: white;
+            border-radius: 10%;
+            padding: 5px;
+        }
+
+        .navbar>.btn {
+            font-size: 30px;
+            padding: 10px;
+            border-radius: 20px;
+            margin-left: 50%;
+        }
+
+        .aminity-img {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            /* display: none;  */
+
+            top: 30%;
+            left: 60%;
+        }
+
+        .aminity-img>img {
+            border-radius: 50%;
+        }
+
+        .back-arrow {
+            width: 30px;
+            height: 30px;
+            z-index: 2;
+            position: absolute;
+            top: 10px;
+            background-color: white;
+            border-radius: 100%;
+            padding: 5px;
+            left: 30px;
+        }
+
+        .banner {
+            width: fit-content;
+            background-image: linear-gradient(to right, blue, violet, red);
+            background-clip: text;
+            color: transparent;
+            border-radius: 10px;
+            font-weight: 900;
+            font-size: 50px;
+            position: absolute;
+            top: 15px;
+            left: 2%;
+            stroke: aliceblue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="page">
+        <div class="navbar">
+            <div class="btn">Home</div>
+
+        </div>
+        <div class="banner">
+            <p class="banner-text">Aminities Offered...</p>
+        </div>
+        <div class="list-type">
+            <ul style="list-style-type: none;">
+                <li>Roof Top Lounge</li>
+                <li>Swimming Pool</li>
+                <li>Grill and BBQ</li>
+                <li>Kid's Cycling Track</li>
+                <li>Adult Fitness</li>
+
+            </ul>
+            <div class="btn">View more</div>
+        </div>
+        <div class="back-arrow" id="back">
+            <img src="./assets/back.png" alt="..">
+        </div>
+        <div class="building">
+            <img src="./assets/aminity-building.jpg" alt="img">
+        </div>
+        <div class="aminity-img">
+            <img src="./assets/swimmingpool.jpeg" alt="sp">
+
+
+        </div>
+    </div>
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const amenityList = document.querySelectorAll('.list-type li');
+            const amenityImage = document.querySelector('.aminity-img img');
+            const backArrow = document.getElementById('back');
+
+
+            backArrow.addEventListener('click', function () {
+                console.log('back clicked');
+                window.location.href = 'home.html';
+
+            });
+
+            function changeImage(amenity) {
+
+                const amenityImages = {
+                    "Roof Top Lounge": "./assets/roof top lounge.jpg",
+                    "Swimming Pool": "./assets/swimmingpool.jpeg ",
+                    "Grill and BBQ": "./assets/gb.jpg ",
+                    "Kid's Cycling Track": "./assets/kid cycle.jpg",
+                    "Adult Fitness": "./assets/fitness gym.jpeg "
+
+                };
+
+                const amenityName = amenity.textContent;
+
+                // Change the image source based on the clicked amenity
+                amenityImage.src = amenityImages[amenityName];
+            }
+
+            // Add click event listeners to each amenity list item
+            amenityList.forEach(function (amenity) {
+                amenity.addEventListener('click', function () {
+                    // Call the function to change the image
+                    changeImage(amenity);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

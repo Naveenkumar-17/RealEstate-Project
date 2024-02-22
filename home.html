@@ -23,7 +23,7 @@
             <div class="button">Home</div>
             <div class="button">Gallery</div>
             <div class="button">About us</div>
-            <div class="button">Aminities</div>
+            <div class="button" id="aminity">Aminities</div>
             <div class="button">Property Type</div>
         </div>
         <div class="search-bar">
@@ -68,6 +68,18 @@
         </div>
     </div>
     <script>
+         document.addEventListener("DOMContentLoaded", function () {
+            const aminity = document.getElementById('aminity');
+
+
+            aminity.addEventListener('click', function () {
+                console.log('aminnity clicked');
+                window.location.href = 'aminities.html';
+
+            });
+
+
+         });
         const cardContainer = document.getElementById('cardContainer');
     
         function autoScroll() {
