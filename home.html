@@ -84,21 +84,19 @@
     
         function autoScroll() {
             const firstCard = cardContainer.firstElementChild;
-            cardContainer.style.transition = 'none'; // Disable transition during the change
-            // cardContainer.style.transform = 'translateX(-100%)'; // Move the container to the left
+            cardContainer.style.transition = 'none';  
+             
             cardContainer.appendChild(firstCard);
-            // cardContainer.style.transform = 'translateX(100%)';
+         
             setTimeout(() => {
-                cardContainer.style.transition = 'transform 5s ease-in-out'; // Re-enable transition
-                cardContainer.style.transform = 'translateX(0)'; // Reset the container position
-            }, 0);
-            setTimeout(() => {
-                cardContainer.style.transition = 'transform 5s ease-in-out'; // Re-enable transition
-                cardContainer.style.transform = 'translateY(0)'; // Reset the container position
-            }, 1);
+                cardContainer.style.transition = 'transform 5s ease-in-out';  
+                    
+            }, 3);
+          
+           
         }
     
-        setInterval(autoScroll, 2000); // Adjust the interval as needed (milliseconds)
+        setInterval(autoScroll, 2000);  
     </script>
 </body>
 

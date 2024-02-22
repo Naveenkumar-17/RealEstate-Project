@@ -10,7 +10,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(to bottom, blue 10%, violet 70%, white);
+            background-image: linear-gradient(to bottom, blue 40%, white);
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -46,7 +46,7 @@
 
         ul li {
             font-size: 20px;
-            background-color: blue;
+            background-color: rgb(3, 3, 71);
             border-radius: 20px;
             padding: 5px 20px;
             margin-top: 25px;
@@ -81,7 +81,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-color: rgba(109, 109, 209, 0.233);
+            /* background-color: rgba(109, 109, 209, 0.233); */
         }
 
         .btn {
@@ -95,20 +95,20 @@
         }
 
         .navbar>.btn {
-            font-size: 30px;
-            padding: 10px;
+            font-size: 20px;
+            padding: 10px 30px;
             border-radius: 20px;
             margin-left: 50%;
         }
 
         .aminity-img {
-            position: fixed;
+            position: relative;
+            left:40%; 
             width: 200px;
             height: 200px;
             /* display: none;  */
 
-            top: 30%;
-            left: 60%;
+             
         }
 
         .aminity-img>img {
@@ -140,6 +140,46 @@
             left: 2%;
             stroke: aliceblue;
         }
+        .content.visible{
+            display: block;
+        }
+        .amenity-description {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #333}
+        .content{
+            width:600px;
+            height:400px;
+            padding:20px;
+            border-radius: 5px;
+            background: rgba(228, 220, 220,0.7);
+            position:absolute;
+            top:15%;
+            right: 10%;
+            overflow:scroll;
+            border-radius: 20px;
+            display: none;
+        }
+        .content:hover{
+            transform:scale(1.1)
+        }
+        .content>p{
+            font-family: 'Georgia', Times New Roman, Times, serif;
+            word-spacing: 5px;
+            font-size: 20px;
+        }
+        .quit-button {
+
+            background-color: #d9534f;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-left: 40%;
+        }
+
     </style>
 
 </head>
@@ -170,53 +210,80 @@
         <div class="building">
             <img src="./assets/aminity-building.jpg" alt="img">
         </div>
-        <div class="aminity-img">
-            <img src="./assets/swimmingpool.jpeg" alt="sp">
+
+         <div class="content">
+            
+            <div class="aminity-img">
+                <img src="./assets/swimmingpool.jpeg" alt="sp">
 
 
-        </div>
+
+            </div>
+            <p class="amenity-description"> Luxurious Swimming Pool
+                Dive into a world of tranquility and recreation with our state-of-the-art swimming pool, a jewel among the amenities that define our residential spaces. Designed for both relaxation and fitness, our pool is a sanctuary where you can escape the hustle and bustle of daily life</p>
+                <button class="quit-button" id="quitButton">Cancel</button>
+            </div>
+    </div>
     </div>
     <script>
 
 
-        document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-            const amenityList = document.querySelectorAll('.list-type li');
-            const amenityImage = document.querySelector('.aminity-img img');
-            const backArrow = document.getElementById('back');
+const amenityList = document.querySelectorAll('.list-type li');
+const amenityImage = document.querySelector('.aminity-img img');
+const amenityDescription = document.querySelector('.amenity-description');
+const content = document.querySelector('.content');
+const backArrow = document.getElementById('back');
+const quitButton = document.getElementById('quitButton');
 
+backArrow.addEventListener('click', function () {
+    console.log('back clicked');
+    window.location.href = 'home.html';
+});
 
-            backArrow.addEventListener('click', function () {
-                console.log('back clicked');
-                window.location.href = 'home.html';
+function changeImageAndDescription(amenity) {
+    const amenityImages = {
+        "Roof Top Lounge": "./assets/roof top lounge.jpg",
+        "Swimming Pool": "./assets/swimmingpool.jpeg",
+        "Grill and BBQ": "./assets/gb.jpg",
+        "Kid's Cycling Track": "./assets/kid cycle.jpg",
+        "Adult Fitness": "./assets/fitness gym.jpeg"
+    };
 
-            });
+    const amenityDescriptions = {
+        "Roof Top Lounge": "Enjoy breathtaking views and unwind in our exclusive Roof Top Lounge.",
+        "Swimming Pool": "Dive into a world of tranquility and recreation with our state-of-the-art swimming pool.",
+        "Grill and BBQ": "Experience the joy of outdoor cooking and entertaining with our Grill and BBQ area.",
+        "Kid's Cycling Track": "A safe and fun space for kids to ride and explore on their bicycles.",
+        "Adult Fitness": "Stay fit and healthy with our fully-equipped Adult Fitness center."
+    };
 
-            function changeImage(amenity) {
+    const amenityName = amenity.textContent;
 
-                const amenityImages = {
-                    "Roof Top Lounge": "./assets/roof top lounge.jpg",
-                    "Swimming Pool": "./assets/swimmingpool.jpeg ",
-                    "Grill and BBQ": "./assets/gb.jpg ",
-                    "Kid's Cycling Track": "./assets/kid cycle.jpg",
-                    "Adult Fitness": "./assets/fitness gym.jpeg "
+     
+    amenityImage.src = amenityImages[amenityName];
 
-                };
+    
+    amenityDescription.textContent = amenityDescriptions[amenityName];
 
-                const amenityName = amenity.textContent;
+     
+    content.classList.add('visible');
+}
 
-                // Change the image source based on the clicked amenity
-                amenityImage.src = amenityImages[amenityName];
-            }
+ 
+amenityList.forEach(function (amenity) {
+    amenity.addEventListener('click', function () {
+ 
+        changeImageAndDescription(amenity);
+    });
+});
 
-            // Add click event listeners to each amenity list item
-            amenityList.forEach(function (amenity) {
-                amenity.addEventListener('click', function () {
-                    // Call the function to change the image
-                    changeImage(amenity);
-                });
-            });
-        });
+quitButton.addEventListener('click', function () {
+                 
+                content.classList.remove('visible');
+            });});
+
     </script>
 </body>
 
