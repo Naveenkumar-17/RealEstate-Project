@@ -92,7 +92,6 @@
             color: white;
             border-radius: 10%;
             padding: 5px;
-            z-index:2;
         }
 
         .navbar>.btn {
@@ -192,18 +191,18 @@
 
         </div>
         <div class="banner">
-            <p class="banner-text">Aminities Offered...</p>
+            <p class="banner-text">Property Types Available</p>
         </div>
         <div class="list-type">
             <ul style="list-style-type: none;">
-                <li>Roof Top Lounge</li>
-                <li>Swimming Pool</li>
-                <li>Grill and BBQ</li>
-                <li>Kid's Cycling Track</li>
-                <li>Adult Fitness</li>
+                <li>Apartments</li>
+                <li> Luxury Villas</li>
+                <li>Residential plots</li>
+                <li>Luxury Estates</li>
+                <li>Farm Houses</li>
 
             </ul>
-            <div class="btn">View more</div>
+             
         </div>
         <div class="back-arrow" id="back">
             <img src="./assets/back.png" alt="..">
@@ -237,13 +236,6 @@ const amenityDescription = document.querySelector('.amenity-description');
 const content = document.querySelector('.content');
 const backArrow = document.getElementById('back');
 const quitButton = document.getElementById('quitButton');
-const homeButton = document.querySelector('.btn');
-
-homeButton.addEventListener('click', () => {
-    console.log("Home clicked");
-    window.location.href = 'home.html';
-});
-
 
 backArrow.addEventListener('click', function () {
     console.log('back clicked');
