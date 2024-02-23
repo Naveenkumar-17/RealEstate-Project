@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(180deg, #1B069E 0%, rgb(123, 114, 178) 100%);
+
+
+        }
+
+
+        .signup-container {
+            background: linear-gradient(180deg, #8884a4 0%, rgb(57, 42, 156) 100%);
+            border: 2px solid white;
+            position: absolute;
+            top:10%;
+
+
+            height: 13cm;
+            width: 20cm;
+            padding: 10px 20px ;
+            border-radius: 50px;
+        }
+
+        .signup-container:hover {
+
+            box-shadow: 2px 0px 5px 10px #fefdfe;
+
+        }
+
+        #backarrow:hover {
+            border: 3px solid #e6dfdf;
+            box-shadow: 2px 0px 5px 5px #b2b2c4;
+        }
+
+        .signup-form input[type="text"],
+        .signup-form input[type="password"],
+        .signup-form input[type="password"],
+        .signup-form input[type="tel"],
+        .signup-form input[type="date"],
+        .signup-form input[type="mail"] {
+            width: 40%;
+            left: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 3px solid #906060;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+
+        .LuxuryRealEstateLogo1 {
+            position: absolute;
+            top: 5px;
+            left: 8px;
+        }
+
+        .LuxuryRealEstateLogo1:hover {
+            border: 3px solid #e6dfdf;
+            box-shadow: 2px 0px 5px 5px #b2b2c4;
+        }
+
+        img {
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .numberdate {
+            position: absolute;
+            left: 50%;
+            top: 30%;
+            width: 80%;
+        }
+
+        .userpass {
+            position: absolute;
+            left: 10%;
+            width: 80%;
+            top: 30%;
+
+        }
+
+        h1 {
+            /* display: flex; */
+            position: absolute;
+            left: 42.5%;
+            top:0px;
+            color: #e6dfdf;
+            z-index: 3;
+
+        }
+
+        #submit {
+            position: absolute;
+            top: 70%;
+            left: 40%;
+            width: 20%;
+            background: linear-gradient(180deg, #8884a4 0%, rgb(57, 42, 156) 100%);
+            color: aliceblue;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 3px solid #1d1010;
+            border-radius: 20px;
+            box-sizing: border-box;
+        }
+
+        #login {
+
+            position: absolute;
+            top: 80%;
+            left: 44.5%;
+            width: 10%;
+            background: linear-gradient(180deg, #8884a4 0%, rgb(57, 42, 156) 100%);
+            color: #e6dfdf;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 3px solid #1d1010;
+            border-radius: 20px;
+            box-sizing: border-box;
+
+        }
+
+        #login:hover {
+            border: 3px solid #e6dfdf;
+            box-shadow: 2px 0px 5px 5px #b2b2c4;
+            color: #e6dfdf;
+
+        }
+
+        #submit:hover {
+            border: 3px solid #e6dfdf;
+            box-shadow: 2px 0px 5px 5px #b2b2c4;
+            color: #e6dfdf;
+        }
+
+        #usercircle {
+            position: absolute;
+            left: 46%;
+            height: 2cm;
+            width: 2cm;
+            top: 15%;
+            z-index: 2;
+        }
+    </style>
+    <img src="/assets/external/usercircle.png" alt="image" id="usercircle">
+    <img class="LuxuryRealEstateLogo1"
+        style="width: 80px; height: 80px; left: 100px; top: 80px; position: absolute; border-radius: 128px; border: 5px #AB9524 solid"
+        src="./assets/external/logo.avif" />
+    <img src="./assets/external/backarrow.png" alt="image" id="backarrow">
+    <h1>Create Account</h1>
+    <div class="signup-container">
+
+        <form class="signup-form" >
+            <div class="userpass">
+                <input type="text" name="username" placeholder="Enter Name" required><br><br>
+                <input type="password" name="password" placeholder="Create Password" required><br><br>
+                <input type="password" name="password" placeholder="Confirm Password" required><br><br>
+            </div>
+            <div class="numberdate">
+                <input id="tel" type="tel" name="Mobile number" placeholder="+91-Enter Mobile Number" required><br><br>
+                <input type="date" name="date" placeholder="Enter the Date of Birth" required><br><br>
+                <input type="mail" name="gmail" placeholder="Enter Your Gmail" required><br><br>
+            </div>
+            <input  value="Create Account" id="submit"><br>
+            
+        </form>
+        <button id="login"  onclick="login()">Login</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backarrow = document.getElementById('backarrow');
+            backarrow.addEventListener('click', function () {
+                window.location.href = 'home.html';
+            });
+           
+        });
+        function login() {
+                console.log(login);
+                window.location.href = 'login.html';
+            }
+    </script>
+
+</body>
+
+</html>

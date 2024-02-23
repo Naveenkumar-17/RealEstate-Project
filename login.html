@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(180deg, #1B069E 0%, rgb(123, 114, 178) 100%);
+
+
+    }
+
+    h1 {
+      position: absolute;
+      color: #e6dfdf;
+      top:10px;
+      left:45%;
+    }
+
+    .login-container {
+      background: linear-gradient(180deg, #8884a4 0%, rgb(57, 42, 156) 100%);
+      border: 2px solid white;
+
+    
+      margin-top: 30px;
+
+      height: 13cm;
+      width: 10cm;
+      padding: 20px;
+      border-radius: 50px;
+
+    }
+
+    .login-container:hover {
+      box-shadow: 2px 0px 5px 10px #fefdfe;
+    }
+
+    .login-container h2 {
+      text-align: center;
+
+    }
+
+    .login-form {
+      margin-top: 100px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+
+      margin-bottom: 10px;
+      border: 3px solid #906060;
+      border-radius: 20px;
+      box-sizing: border-box;
+    }
+
+
+
+    .login-form input[type="submit"] {
+      width:fit-content;
+      margin-left: 20%;
+      padding: 10px 100px;
+      border: none;
+      background-color: #110464;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 50px;
+    }
+
+    img {
+      position: absolute;
+      top: 30px;
+      left: 10px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .login-form input[type="submit"]:hover {
+      background-color: #361be6;
+    }
+
+    input::placeholder {
+      font-size: 20px;
+      position: absolute;
+      left: 40%;
+    }
+
+    .finger {
+      width: 50px;
+      height: 60px;
+      position: absolute;
+      top: 54%;
+      left: 48.5%;
+    }
+
+    .LuxuryRealEstateLogo1  {
+      position: absolute;
+      top: 5px;
+      left: 8px;
+    }
+
+    .LuxuryRealEstateLogo1:hover {
+      border: 3px solid #e6dfdf;
+      box-shadow: 2px 0px 5px 5px #b2b2c4;
+    }
+
+    #usercircle {
+      position: absolute;
+      top:15%;
+      left: 47.5%;
+      height: 2cm;
+      width: 2cm;
+
+    }
+
+    #submit:hover {
+
+      border: 3px solid #e6dfdf;
+      box-shadow: 2px 0px 5px 5px #b2b2c4;
+    }
+    #backarrow:hover{
+      border: 3px solid #e6dfdf;
+      box-shadow: 2px 0px 5px 5px #b2b2c4;
+    }
+  </style>
+</head>
+
+<body>
+   
+    <h1>Login</h1>
+  
+  <img class="LuxuryRealEstateLogo1"
+    style="width: 80px; height: 80px; left: 100px; top: 80px; position: absolute; border-radius: 128px; border: 5px #AB9524 solid"
+    src="./assets/external/logo.avif" />
+  <img src="./assets/external/backarrow.png" alt="image"id="backarrow">
+  <img src="./assets/external/usercircle.png" alt="image" id="usercircle">
+  <div class="login-container">
+    <h1></h1><br><br>
+    <form class="login-form" action="" method="post">
+      <input type="text" name="username" placeholder="Username" required><br><br>
+      <input type="password" name="password" placeholder="Password" required><br><br><br><br><br><br>
+       
+      <input type="submit" value="Login" id="submit">
+    </form>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+      const backarrow=document.getElementById('backarrow');
+      backarrow.addEventListener('click',function(){
+         window.location.href='home.html';
+      });
+    });
+</script>
+</body>
+
+</html>

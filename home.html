@@ -10,21 +10,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
     <div class="page">
+        <img src="./assets/homepage-bg.jpg" alt="bg" id="bg">
         <div class="logo">
             <img src="./assets/logo.png" alt="logo" id="logo-icon">
         </div>
         <div class="navbar">
             <div class="button">Home</div>
-            <div class="button">Gallery</div>
-            <div class="button">About us</div>
+            <div class="button" id="gallery">Gallery</div>
+            <div class="button" id="aboutus">Contact us</div>
             <div class="button" id="aminity">Aminities</div>
-            <div class="button">Property Type</div>
+            <div class="button" id="property">Property Type</div>
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Enter location here">
@@ -32,7 +35,7 @@
         <div class="search-icon">
             <span class="material-symbols-outlined">
                 search
-                </span>
+            </span>
         </div>
         <div class="buy">
             Buy now
@@ -40,19 +43,26 @@
         <div class="back-arrow-icon">
             ➡
         </div>
+        <div class="user">
+            <img id="login" src="./assets/Properties/login icon.jpeg" alt="user">
+        </div>
+        <div class="inlay" id="inlayOptions">
+            <p><a href="signup.html">New User</a></p>
+            <p><a href="login.html">Existing User</a></p>
+        </div>
         <!-- ---------------------------Scrolling img------------------------------------------------------------------ -->
         <div class="card-stack">
             <div class="card-container" id="cardContainer">
                 <div class="card"><img src="./assets/image1.jpeg" alt="Card 1"></div>
                 <div class="card" id="center"><img src="./assets/image2.jpeg" alt="Card 2"></div>
                 <div class="card"><img src="./assets/image3.jpg" alt="Card 2"></div>
-                
-              
+
+
             </div>
         </div>
         <!-- -------------------------------------home img --------------------------------------------- -->
         <div class="banner">
-             
+
 
             <div class="content">
                 <div class="bold-quote">
@@ -68,35 +78,79 @@
         </div>
     </div>
     <script>
-         document.addEventListener("DOMContentLoaded", function () {
-            const aminity = document.getElementById('aminity');
+        document.addEventListener("DOMContentLoaded", function () {
+            //about us button
+            const aboutus = document.getElementById('aboutus');
 
 
-            aminity.addEventListener('click', function () {
-                console.log('aminnity clicked');
-                window.location.href = 'aminities.html';
+            aboutus.addEventListener('click', function () {
+
+                window.location.href = 'aboutus.html';
+            });
+            // Gallery button
+            const gallery = document.getElementById('gallery');
+
+
+            gallery.addEventListener('click', function () {
+
+                window.location.href = 'gallery.html';
+            });
+                //aminity
+                const aminity = document.getElementById('aminity');
+
+
+                aminity.addEventListener('click', function () {
+                    console.log('aminity clicked');
+                    window.location.href = 'aminities.html';
+
+                });
+                //Signup button
+                const login = document.getElementById('login');
+                login.addEventListener('click', function () {
+
+                    const inlay = document.querySelector("#inlayOptions");
+                    console.log(inlay);
+                    inlay.style.display = 'block';
+                });
+                login.addEventListener('dblclick', function () {
+
+                    const inlay = document.querySelector("#inlayOptions");
+                    console.log(inlay);
+                    inlay.style.display = 'none';
+                });
+
+                //property button
+                const property = document.getElementById('property');
+                console.log(property)
+                property.addEventListener('click', function () {
+                    console.log('property clicked');
+                    window.location.href = 'property_type.html';
+
+                });
+
+
+
+
+
 
             });
+            const cardContainer = document.getElementById('cardContainer');
+
+            function autoScroll() {
+                const firstCard = cardContainer.firstElementChild;
+                cardContainer.style.transition = 'none';
+
+                cardContainer.appendChild(firstCard);
+
+                setTimeout(() => {
+                    cardContainer.style.transition = 'transform 5s ease-in-out';
+
+                }, 3);
 
 
-         });
-        const cardContainer = document.getElementById('cardContainer');
-    
-        function autoScroll() {
-            const firstCard = cardContainer.firstElementChild;
-            cardContainer.style.transition = 'none';  
-             
-            cardContainer.appendChild(firstCard);
-         
-            setTimeout(() => {
-                cardContainer.style.transition = 'transform 5s ease-in-out';  
-                    
-            }, 3);
-          
-           
-        }
-    
-        setInterval(autoScroll, 2000);  
+            }
+
+            setInterval(autoScroll, 2000);  
     </script>
 </body>
 

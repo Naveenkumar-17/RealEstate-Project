@@ -112,7 +112,7 @@
         }
 
         .aminity-img>img {
-            border-radius: 50%;
+            border-radius: 30%;
         }
 
         .back-arrow {
@@ -129,16 +129,18 @@
 
         .banner {
             width: fit-content;
+            height:fit-content;
             background-image: linear-gradient(to right, blue, violet, red);
-            background-clip: text;
-            color: transparent;
+            padding: 5px;
+            color: white;
             border-radius: 10px;
             font-weight: 900;
             font-size: 50px;
             position: absolute;
-            top: 15px;
+            top: 55px;
             left: 2%;
             stroke: aliceblue;
+            text-align: center;
         }
         .content.visible{
             display: block;
@@ -179,6 +181,7 @@
             margin-top: 20px;
             margin-left: 40%;
         }
+        
 
     </style>
 
@@ -187,16 +190,16 @@
 <body>
     <div class="page">
         <div class="navbar">
-            <div class="btn">Home</div>
+            <div class="btn" id="home">Home</div>
 
         </div>
         <div class="banner">
-            <p class="banner-text">Property Types Available</p>
+            <span class="banner-text">Properties Available</span>
         </div>
         <div class="list-type">
             <ul style="list-style-type: none;">
                 <li>Apartments</li>
-                <li> Luxury Villas</li>
+                <li>Luxury Villas</li>
                 <li>Residential plots</li>
                 <li>Luxury Estates</li>
                 <li>Farm Houses</li>
@@ -236,27 +239,35 @@ const amenityDescription = document.querySelector('.amenity-description');
 const content = document.querySelector('.content');
 const backArrow = document.getElementById('back');
 const quitButton = document.getElementById('quitButton');
+const homeButton = document.getElementById('home');
+
+homeButton.addEventListener('click', () => {
+    console.log("Home clicked");
+    window.location.href = 'home.html';
+});
+
 
 backArrow.addEventListener('click', function () {
     console.log('back clicked');
     window.location.href = 'home.html';
 });
 
+
 function changeImageAndDescription(amenity) {
     const amenityImages = {
-        "Roof Top Lounge": "./assets/roof top lounge.jpg",
-        "Swimming Pool": "./assets/swimmingpool.jpeg",
-        "Grill and BBQ": "./assets/gb.jpg",
-        "Kid's Cycling Track": "./assets/kid cycle.jpg",
-        "Adult Fitness": "./assets/fitness gym.jpeg"
+        "Apartments": "./assets/Properties/apartment.jpg",
+        "Luxury Villas": "./assets/Properties/Luxury villa.jpeg",
+        "Residential plots": "./assets/Properties/plots.jpg",
+        "Luxury Estates": "./assets/Properties/luxury estate.jpeg",
+        "Farm Houses": "./assets/Properties/farmhouse.jpg"
     };
 
     const amenityDescriptions = {
-        "Roof Top Lounge": "Enjoy breathtaking views and unwind in our exclusive Roof Top Lounge.",
-        "Swimming Pool": "Dive into a world of tranquility and recreation with our state-of-the-art swimming pool.",
-        "Grill and BBQ": "Experience the joy of outdoor cooking and entertaining with our Grill and BBQ area.",
-        "Kid's Cycling Track": "A safe and fun space for kids to ride and explore on their bicycles.",
-        "Adult Fitness": "Stay fit and healthy with our fully-equipped Adult Fitness center."
+        "Apartments": " Contemporary living meets convenience in our exquisite apartments. Enjoy modern amenities, stylish interiors, and a vibrant community atmosphere. Perfect for individuals or families seeking a comfortable and connected urban lifestyle.",
+        "Luxury Villas": " Indulge in the epitome of opulence with our luxury villas. Experience lavish living spaces, bespoke design, and private amenities. These exclusive residences offer a perfect blend of sophistication and tranquility for those who desire a grand lifestyle.",
+        "Residential plots": "Build your dream home on one of our thoughtfully planned residential plots. Embrace the freedom to customize your living space, surrounded by nature. Each plot is a canvas for your vision, providing a unique opportunity to create a home that reflects your personal style.",
+        "Luxury Estates": "Our luxury estates redefine elegance and grandeur. Sprawling across expansive grounds, these estates offer a blend of timeless architecture and modern comforts. Immerse yourself in luxury, privacy, and the finest details that make a residence truly extraordinary.",
+        "Farm Houses": "Escape to the serenity of our farmhouses, where rural charm meets contemporary living. These retreats provide a peaceful oasis away from the hustle and bustle, allowing you to reconnect with nature. Ideal for those who seek a tranquil escape with the comforts of a well-designed home."
     };
 
     const amenityName = amenity.textContent;

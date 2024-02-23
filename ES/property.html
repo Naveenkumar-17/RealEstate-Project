@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: brightness(30%);
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1s ease-in-out;
+            animate-zoom: ;
+
+        }
+
+
+
+
+
+        html {
+            box-sizing: border-box;
+            
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        @media screen and (max-width: 650px) {
+            .column {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .card {
+            color: #ffffff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: scaleX(1.2);
+            
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        
+
+        .button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        #housetype {
+            position: absolute;
+            left: 50%;
+        }
+
+        #descrition {
+            position: absolute;
+            position: fixed;
+            border-radius: 50px;
+            padding: 20px;
+            height: 15cm;
+            width: 13cm;
+            left: 8%;
+            background: linear-gradient(180deg, #938fad 0%, rgb(30, 23, 81) 100%);
+            top: 20%;
+            border: 3px solid white;
+        }
+        #descrition:hover{
+            background: linear-gradient(180deg, #211477 0%, rgb(197, 196, 207) 100%);
+            box-shadow: 2px 0px 5px 10px #fefdfe;
+        }
+
+        #division {
+
+
+            border-radius: 50px;
+            border: 5px solid rgb(180, 162, 162);
+            height: 2cm;
+            width: 7cm;
+
+        }
+        #division:hover{
+            box-shadow: 2px 0px 5px 10px #fefdfe;
+            transform: scaleX(1.2);
+  
+
+           
+        }
+        #backarrow {
+            position: absolute;
+            position: fixed;
+            height: 50px;
+            width: 50px;
+            top: 10px;
+            left: 10px;
+        }
+
+        #backarrow:hover {
+            border: 3px solid #e6dfdf;
+            box-shadow: 2px 0px 5px 5px #b2b2c4;
+        }
+        #heading{
+            color: white;
+            position: absolute;
+            position: fixed;
+            left: 14%;
+            top:0.7cm;
+        }
+        #mail{
+            color: #5344b7;
+        }
+    </style>
+    
+    <div class="background-image"></div>
+
+    <div id="housetype">
+        <div class="row">
+            <div class="column">
+                <div class="card">
+                    <img src="image1.jpg" alt="Jane" style="width:100%">
+                    <div class="container">
+                        
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <a href=""style="text-decoration:none"><p id="mail">example@example.com</p></a>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="card">
+                    <img src="image3.jpg" alt="Mike" style="width:100%">
+                    <div class="container">
+                        
+                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                        <a href=""style="text-decoration:none"><p id="mail">example@example.com</p></a>
+                        <p><button class="button">Contact</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="image4.jpg" alt="Jane" style="width:100%">
+                        <div class="container">
+                            
+                            <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                            <a href=""style="text-decoration:none"><p id="mail">example@example.com</p></a>
+                            <p><button class="button">Contact</button></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <img src="image1.jpg" alt="Jane" style="width:100%">
+                            <div class="container">
+                                
+                                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                                <a href=""style="text-decoration:none"><p id="mail">example@example.com</p></a>
+                                <p><button class="button">Contact</button></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="column">
+                            <div class="card">
+                                <img src="image4.jpg" alt="Jane" style="width:100%">
+                                <div class="container">
+                                    
+                                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                                    <a href=""style="text-decoration:none"><p id="mail">example@example.com</p></a>
+                                    <p><button class="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column">
+                            <div class="card">
+                                <img src="image3.jpg" alt="John" style="width:100%">
+                                <div class="container">
+                                    
+                                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                                    <a href=""style="text-decoration:none"><p id="mail">example@example.com</p></a>
+                                    <p><button class="button">Contact</button></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var images = [
+                            "image1.jpg",
+                            "image2.jpg",
+                            "image3.jpg"
+                        ];
+
+                        var currentIndex = 0;
+
+                        function changeBackground() {
+                            document.querySelector(".background-image").style.backgroundImage = "url('" + images[currentIndex] + "')";
+                            currentIndex = (currentIndex + 1) % images.length;
+                        }
+
+                        changeBackground();
+
+                        setInterval(changeBackground, 3000);
+                    });
+
+                </script>
+                <div id="descrition" align="center"><br>
+                    <div id="division">
+                        <a href=""><h1><strong>Plots</strong></h1></a>
+                    </div><br><br>
+                    <div id="division">
+                        <a href=""><h1><strong>Villa House</strong></h1></a>
+                    </div><br><br>
+                    <div id="division">
+                        <a href=""><h1><strong>Apartment</strong></h1></a>
+                    </div><br><br>
+                    <div id="division">
+                        <a href=""><h1><strong>Bungalows</strong></h1></a>
+                    </div>
+
+                </div>
+                <img src="backarrow.png" alt="image" id="backarrow">
+                <h1 id="heading"style="font-size: 60px;">Property Types</h1>
+</body>
+
+</html>
